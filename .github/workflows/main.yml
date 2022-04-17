@@ -52,7 +52,7 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1.10.0
       with:
-        tag: bin
+        tag: ${{ github.head_ref }}.${{ github.sha }}
         artifacts: .pio/build/STM32F103RET6_creality/*.bin
-        artifactContentType: Creality board v4.2.2| 3 point bed leveling | A4988 stepper
+        body: Creality board v4.2.2 | 3 point bed leveling | bed tramming | A4988 stepper
         
