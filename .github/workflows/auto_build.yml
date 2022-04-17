@@ -53,5 +53,5 @@ jobs:
         commit: ${{ github.sha }}
         name: Creality board v4.2.2 | 3 point bed leveling | bed tramming | A4988 stepper
         artifacts: .pio/build/STM32F103RET6_creality/*.bin
-        tag: ${{ github.head_ref }}
+        tag: binary
         
