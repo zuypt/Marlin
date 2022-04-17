@@ -33,15 +33,25 @@ jobs:
       with:
         path: ~/.platformio
         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        
     - name: Set up Python
       uses: actions/setup-python@v2
+      
     - name: Install PlatformIO
       run: |
         python -m pip install --upgrade pip
         pip install --upgrade platformio
+        
     - name: Copy configuration files
       run:
         cp ./configurations/Creality/Ender-3\ Pro/CrealityV422/0/*.h ./Marlin/
-    
+        
     - name: Run PlatformIO
       run: pio run -e STM32F103RET6_creality
+      
+    - name: Create release
+      uses: ncipollo/release-action@v1.10.0
+      with:
+        artifacts: .pio/build/STM32F103RET6_creality/*.bin
+        artifactContentType: Creality board v4.2.2| 3 point bed leveling | A4988 stepper
+        
