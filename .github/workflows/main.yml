@@ -41,7 +41,7 @@ jobs:
         pip install --upgrade platformio
     - name: Copy configuration files
       run:
-        cp ./configurations/* ./Marlin/
+        cp ./configurations/Creality/Ender-3\ Pro/CrealityV422\*.h ./Marlin/
     
     - name: Run PlatformIO
       run: pio run -e STM32F103RET6_creality
