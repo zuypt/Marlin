@@ -41,7 +41,7 @@ jobs:
         pip install --upgrade platformio
     - name: Copy configuration files
       run:
-        cp ${{ github.workspace }}/configurations ${{GITHUB_WORKSPACE}}/Marlin
+        cp ${{ github.workspace }}/configurations ${{ github.workspace }}/Marlin
     
     - name: Run PlatformIO
       run: pio run -e STM32F103RET6_creality
