@@ -51,7 +51,8 @@ jobs:
       uses: ncipollo/release-action@v1.10.0
       with:
         commit: ${{ github.sha }}
-        name: Creality board v4.2.2 | 3 point bed leveling | bed tramming | A4988 stepper
+        name: Creality v4.2.2 | 3 Point Bed Leveling | Bed Tramming | A4988
         artifacts: .pio/build/STM32F103RET6_creality/*.bin
         tag: binary
+        bodyFile: ./configurations/Creality/Ender-3\ Pro/CrealityV422/0/body.md
         
