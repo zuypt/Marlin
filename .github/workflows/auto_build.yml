@@ -6,7 +6,8 @@ name: Auto Build
 on:
   # Triggers the workflow on push or pull request events but only for the 2.0.x branch
   push:
-    tags: '*'
+    branches:
+    - 2.0.x
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -52,4 +53,5 @@ jobs:
       with:
         commit: ${{ github.sha }}
         name: Creality v4.2.2 | 3 Point Bed Leveling | Bed Tramming | A4988
-        artifacts: .pio/build/STM32F103RET6_creality/*.bin  
+        artifacts: .pio/build/STM32F103RET6_creality/*.bin
+        tag: autobuild-${{ github.sha }}
