@@ -53,4 +53,4 @@ jobs:
         commit: ${{ github.sha }}
         name: Creality v4.2.2 | 3 Point Bed Leveling | Bed Tramming | A4988
         artifacts: .pio/build/STM32F103RET6_creality/*.bin
-        tag: binary        
+        tag: ${{ github.sha }}        
